@@ -18,12 +18,17 @@ public class Parent {
         return sb.toString();
     }
 
+    public boolean canEqual(final Object o) {
+        return o instanceof Parent;
+    }
+
     @Override
     public boolean equals(final Object o) {
         if (this == o) return true;
         if (!(o instanceof Parent)) return false;
 
         final Parent parent = (Parent) o;
+        if (!parent.canEqual(this)) return false;
 
         return surname != null ? surname.equals(parent.surname) : parent.surname == null;
     }
