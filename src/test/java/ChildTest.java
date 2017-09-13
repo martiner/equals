@@ -23,7 +23,6 @@ public class ChildTest {
         EqualsVerifier.forClass(Child.class)
                 .withRedefinedSuperclass()
                 .suppress(
-                        Warning.STRICT_INHERITANCE, // allow subclasses with added state
                         Warning.NONFINAL_FIELDS // this is java bean
                 )
                 .verify();

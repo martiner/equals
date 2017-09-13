@@ -1,4 +1,4 @@
-public class Child extends Parent {
+public final class Child extends Parent {
 
     private String name;
 
